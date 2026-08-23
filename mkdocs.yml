@@ -1,0 +1,50 @@
+site_name: Berry-Myon的半妖阁
+site_description: Berry-Myon 的个人网站
+use_directory_urls: false
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+  features:
+    - navigation.tabs
+    - navigation.indexes
+
+nav:
+  - 半妖阁: index.md
+  - 寺子屋: course/index.md
+  - 白玉楼: research/index.md
+  - 香霖堂: work/index.md
+  - 西行樱庭: cosplay/index.md
+  - 竹林隐居: friends/index.md
+  - 月下: about/index.md
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - md_in_html
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true

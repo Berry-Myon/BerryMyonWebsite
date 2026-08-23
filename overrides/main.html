@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page and page.meta and page.meta.forced_scheme %}
+    <script>
+      (() => {
+        const forced = {
+          scheme: "{{ page.meta.forced_scheme }}",
+          primary: "{{ page.meta.forced_primary }}",
+          accent: "{{ page.meta.forced_accent }}"
+        };
+
+        const applyForcedPalette = () => {
+          if (!document.body) return;
+
+          for (const [key, value] of Object.entries(forced)) {
+            const attribute = `data-md-color-${key}`;
+            if (document.body.getAttribute(attribute) !== value) {
+              document.body.setAttribute(attribute, value);
+            }
+          }
+
+          document.body.setAttribute("data-berry-forced-scheme", forced.scheme);
+        };
+
+        const observer = new MutationObserver(applyForcedPalette);
+        observer.observe(document.documentElement, {
+          attributes: true,
+          childList: true,
+          subtree: true,
+          attributeFilter: [
+            "data-md-color-scheme",
+            "data-md-color-primary",
+            "data-md-color-accent"
+          ]
+        });
+
+        document.addEventListener("DOMContentLoaded", applyForcedPalette);
+      })();
+    </script>
+  {% endif %}
+{% endblock %}

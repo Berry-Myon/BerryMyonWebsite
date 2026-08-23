@@ -1,0 +1,1055 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Berry-Myon 的个人网站">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>嵌入式系统 - Berry-Myon的半妖阁</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  
+    <script>
+      (() => {
+        const forced = {
+          scheme: "default",
+          primary: "white",
+          accent: "pink"
+        };
+
+        const applyForcedPalette = () => {
+          if (!document.body) return;
+
+          for (const [key, value] of Object.entries(forced)) {
+            const attribute = `data-md-color-${key}`;
+            if (document.body.getAttribute(attribute) !== value) {
+              document.body.setAttribute(attribute, value);
+            }
+          }
+
+          document.body.setAttribute("data-berry-forced-scheme", forced.scheme);
+        };
+
+        const observer = new MutationObserver(applyForcedPalette);
+        observer.observe(document.documentElement, {
+          attributes: true,
+          childList: true,
+          subtree: true,
+          attributeFilter: [
+            "data-md-color-scheme",
+            "data-md-color-primary",
+            "data-md-color-accent"
+          ]
+        });
+
+        document.addEventListener("DOMContentLoaded", applyForcedPalette);
+      })();
+    </script>
+  
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../index.html" title="Berry-Myon的半妖阁" class="md-header__button md-logo" aria-label="Berry-Myon的半妖阁" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Berry-Myon的半妖阁
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              嵌入式系统
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="pink"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="amber"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  半妖阁
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  寺子屋
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../research/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  白玉楼
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../work/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  香霖堂
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cosplay/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  西行樱庭
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../friends/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  竹林隐居
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  月下
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Berry-Myon的半妖阁" class="md-nav__button md-logo" aria-label="Berry-Myon的半妖阁" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Berry-Myon的半妖阁
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    半妖阁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    寺子屋
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    白玉楼
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    香霖堂
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cosplay/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    西行樱庭
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../friends/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    竹林隐居
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    月下
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模拟烤箱数字按键系统
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        温控电机旋转系统
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定时与中断
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="_1">嵌入式系统</h1>
+<div class="course-layout">
+<article class="course-main course-article">
+<h2 id="_2">模拟烤箱数字按键系统</h2>
+<p>实验目的：</p>
+<ul>
+<li>了解试验箱器件及其功能。</li>
+<li>使用单片机控制动态数码管和矩阵按键。</li>
+<li>编写 C 程序控制单片机。</li>
+<li>掌握程序烧录过程。</li>
+</ul>
+<figure class="course-figure">
+<p><img alt="矩阵按键示意图" src="../assets/course/embedded-oven/embedded-oven-01.png" /></p>
+<figcaption>矩阵按键示意图。</figcaption>
+</figure>
+<p>我把矩阵按键检测整理成这一步：按键按下后，P1 得到低电平并记录位置。再让 P1 输入低电平，P2 得到另一个低电平，行列交叉处为按键编号。</p>
+<p>动态数码管一次只能输出一位数字编码。程序依次显示各位数字，时间间隔足够短时，人眼看到的是多位同时显示。</p>
+<p>接线记录：</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>连接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P00~P07</td>
+<td>动态数码管 A~Dp</td>
+</tr>
+<tr>
+<td>P23、P24、P25</td>
+<td>动态数码管 A、B、C</td>
+</tr>
+<tr>
+<td>P10~P17</td>
+<td>矩阵按键 L4~H1</td>
+</tr>
+</tbody>
+</table>
+<p>使用方式：</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电源</td>
+<td>开机，再次按下关机</td>
+</tr>
+<tr>
+<td>RSTK1</td>
+<td>重启程序</td>
+</tr>
+<tr>
+<td>S0、S1、S2、S3</td>
+<td>设置温度为 20、100、180、250</td>
+</tr>
+<tr>
+<td>S4、S5</td>
+<td>升高或降低 1 个单位，长按连续变化</td>
+</tr>
+</tbody>
+</table>
+<p>我当时遇到的三个问题：</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数码管闪烁</td>
+<td>将较长 <code>delay</code> 拆成小间隔，每个小间隔后刷新显示</td>
+</tr>
+<tr>
+<td>温度增减越界</td>
+<td>修正边界条件，处理十进制进位和借位</td>
+</tr>
+<tr>
+<td>短按和长按误判</td>
+<td>无按键时把记忆键设为不存在或无关按键，如 S6</td>
+</tr>
+</tbody>
+</table>
+<p>关键代码中，矩阵键盘先测列再测行：</p>
+<div class="highlight"><pre><span></span><code><span class="n">GPIO_KEY</span><span class="o">=</span><span class="mh">0X0F</span><span class="p">;</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">GPIO_KEY</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0X07</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0X0b</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0X0d</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0X0e</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">GPIO_KEY</span><span class="o">=</span><span class="mh">0XF0</span><span class="p">;</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">GPIO_KEY</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0X70</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="n">KeyValue</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0Xb0</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="n">KeyValue</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0Xd0</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="n">KeyValue</span><span class="o">+</span><span class="mi">8</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="p">(</span><span class="mh">0Xe0</span><span class="p">):</span><span class="w"> </span><span class="n">KeyValue</span><span class="o">=</span><span class="n">KeyValue</span><span class="o">+</span><span class="mi">12</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_3">温控电机旋转系统</h2>
+<p>实验使用 STM32 单片机、动态数码管、独立按键、步进电机和 DS18B20 温度传感器。</p>
+<p>步进电机每一瞬间只有一个线圈导通。每送一个励磁信号，电机旋转一定角度。励磁顺序反向时，电机反转。</p>
+<p>温度传感器读取过程包括初始化时序、写时序和读时序。转换后的温度值以二字节补码存放。正温度乘以 0.0625 得到实际温度，负温度取反加一后再乘以 0.0625。</p>
+<p>接线记录：</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>连接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P00~P07</td>
+<td>动态数码管 A~Dp</td>
+</tr>
+<tr>
+<td>P34、P35、P36</td>
+<td>动态数码管 A、B、C</td>
+</tr>
+<tr>
+<td>P10~P13</td>
+<td>步进电机 A~D</td>
+</tr>
+<tr>
+<td>P17</td>
+<td>LED 灯 D3</td>
+</tr>
+<tr>
+<td>P20~P27</td>
+<td>K1~K8</td>
+</tr>
+<tr>
+<td>P37</td>
+<td>温度传感器 J14</td>
+</tr>
+</tbody>
+</table>
+<p>控制逻辑：</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>电机状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S4 关闭</td>
+<td>不转</td>
+</tr>
+<tr>
+<td>S4 打开，实际温度高于设定温度 10 以上</td>
+<td>逆时针高速</td>
+</tr>
+<tr>
+<td>S4 打开，实际温度高于设定温度</td>
+<td>逆时针低速</td>
+</tr>
+<tr>
+<td>S4 打开，实际温度低于设定温度 10 以上</td>
+<td>顺时针高速</td>
+</tr>
+<tr>
+<td>S4 打开，实际温度低于设定温度</td>
+<td>顺时针低速</td>
+</tr>
+</tbody>
+</table>
+<p>关键主循环：</p>
+<div class="highlight"><pre><span></span><code><span class="n">temp</span><span class="o">=</span><span class="n">DS18B20_Get_Temp</span><span class="p">();</span>
+<span class="n">temper</span><span class="o">=</span><span class="n">temp</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">DigDisplay</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">ifis_opened</span><span class="p">){</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">temper</span><span class="o">/</span><span class="mi">10</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">get_num</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">motoz_fast</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">temper</span><span class="o">/</span><span class="mi">10</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">get_num</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">motoz</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">temper</span><span class="o">/</span><span class="mi">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">get_num</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">motof_fast</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">motof</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="w"> </span><span class="n">GPIO_Write</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span><span class="mh">0xffff</span><span class="p">);</span>
+</code></pre></div>
+<p>我当时记录的问题：</p>
+<ul>
+<li>每次显示前都重新读取温度，会造成显示滞留或闪烁。</li>
+<li>独立按键接线不完整时，第三个按键无法正常使用。</li>
+<li>电机高速旋转时函数占用时间较长，数码管刷新变慢并变暗。高速旋转代码中加入显示函数后恢复正常。</li>
+</ul>
+<h2 id="_4">定时与中断</h2>
+<p>定时器配置记录：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Timer01</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">EA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">TMOD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x01</span><span class="p">;</span>
+<span class="w">    </span><span class="n">TH0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3C</span><span class="p">;</span>
+<span class="w">    </span><span class="n">TL0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xB0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">ET0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">TR0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>3CB0H = 15536</code>，对应 50000 微秒，也就是 50 ms。中断函数每 20 次计为 1 秒，再做秒、分、时、日、月、年的进位。</p>
+<div class="course-gallery">
+<figure class="course-figure">
+<p><img alt="定时器代码截图" src="../assets/course/embedded-timer/embedded-timer-01.png" /></p>
+<figcaption>定时与中断实验中的代码截图。</figcaption>
+</figure>
+<figure class="course-figure">
+<p><img alt="定时器内存窗口截图" src="../assets/course/embedded-timer/embedded-timer-02.png" /></p>
+<figcaption>实验中的内存窗口记录。</figcaption>
+</figure>
+</div>
+<p>1:1 计时实验数据：</p>
+<table>
+<thead>
+<tr>
+<th>Min(HEX)</th>
+<th>Sec(HEX)</th>
+<th>Min(DEC)</th>
+<th>Sec(DEC)</th>
+<th>折算秒数</th>
+<th>实测秒数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>32</td>
+<td>00</td>
+<td>50</td>
+<td>51</td>
+<td>51.39848142</td>
+</tr>
+<tr>
+<td>02</td>
+<td>0B</td>
+<td>02</td>
+<td>11</td>
+<td>132</td>
+<td>132.75105842</td>
+</tr>
+<tr>
+<td>03</td>
+<td>3A</td>
+<td>03</td>
+<td>58</td>
+<td>239</td>
+<td>239.08594292</td>
+</tr>
+</tbody>
+</table>
+<p>1000 倍速实验：</p>
+<div class="highlight"><pre><span></span><code><span class="n">TH0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span>
+<span class="n">TL0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xCE</span><span class="p">;</span><span class="w">  </span><span class="c1">// 0FFCEH = 65486, means 50us</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Hour(HEX)</th>
+<th>Min(HEX)</th>
+<th>Sec(HEX)</th>
+<th>Min(DEC)</th>
+<th>Sec(DEC)</th>
+<th>Sec(×1000)</th>
+<th>实测秒数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09</td>
+<td>14</td>
+<td>07</td>
+<td>80</td>
+<td>07</td>
+<td>4808</td>
+<td>4.95255317</td>
+</tr>
+<tr>
+<td>0B</td>
+<td>19</td>
+<td>14</td>
+<td>205</td>
+<td>20</td>
+<td>13521</td>
+<td>12.69145292</td>
+</tr>
+</tbody>
+</table>
+</article>
+<aside aria-label="寺子屋索引" class="course-index">
+<p class="course-index__title">文章列表</p>
+  <a class="course-index__home" href="index.html">总览</a>
+  <div class="course-index__group">
+<p>基础数理</p><a href="numerical-methods.html">计算方法</a><a href="oop.html">OOP</a><a class="is-active" href="embedded-systems.html">嵌入式系统</a></div>
+<div class="course-index__group">
+<p>外语</p><a href="english-lexicology.html">英语词汇学</a><a href="japanese.html">日语</a></div>
+<div class="course-index__group">
+<p>专业课及其实践</p><a href="robotic-arm.html">机器人学：机械臂</a><a href="mobile-robot.html">机器人学：移动机器人</a><a href="pallet-robot.html">托盘机器人</a><a href="aerial-robot.html">空中机器人</a><a href="cv.html">CV</a><a href="nlp.html">NLP</a><a href="optimization-control.html">最优化控制</a><a href="thesis-sailboat.html">本科毕业设计</a></div>
+<div class="course-index__group">
+<p>团队竞赛</p><a href="team.html">团队竞赛</a></div>
+</aside>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
