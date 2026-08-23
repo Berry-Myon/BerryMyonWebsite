@@ -35,6 +35,8 @@ nav:
   - 竹林隐居: friends/index.md
   - 月下: about/index.md
 
+plugins: []
+
 extra_css:
   - stylesheets/extra.css
 

@@ -1,7 +1,4 @@
 ---
-forced_scheme: default
-forced_primary: white
-forced_accent: blue
 hide:
   - toc
 ---
