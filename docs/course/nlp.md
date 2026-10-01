@@ -17,7 +17,7 @@ hide:
 
 数据集由训练集、验证集和测试集组成，每部分包含图片、问题 JSON 和答案 JSON。
 
-实验环境记录：
+实验环境：
 
 | 部分 | 环境 |
 | --- | --- |
@@ -71,7 +71,7 @@ Bottom-Up Top-Down 部分先做图片预处理、JSON 预处理和词汇表构�
 | learning rate | 0.001 |
 | lr halflife | 50000 |
 
-我记录的调参：
+调参结果：
 
 | 调整 | 结果 |
 | --- | --- |
@@ -102,7 +102,7 @@ Bottom-Up Top-Down 部分先做图片预处理、JSON 预处理和词汇表构�
 
 我还尝试把 PyTorch 代码迁移到 MindSpore。
 
-保留结果：
+迁移过程中遇到的问题：
 
 - 课程数据包含 annotation、question 和 image 三个层面，MindSpore 预构建的 CocoDataset 少了 question 层。
 - 自定义数据集可以建立图片、问题、答案之间的联系。
@@ -146,7 +146,7 @@ Bottom-Up Top-Down 部分先做图片预处理、JSON 预处理和词汇表构�
 </figure>
 </div>
 
-最后的结果是：训练集准确率可达到约 0.9，验证集准确率约 0.45。按问题类型拆分后，yes/no 和 number 在训练集上接近 100%，验证集较早收敛。
+训练集准确率达到约 0.9，验证集准确率约 0.45。按问题类型拆分后，yes/no 和 number 在训练集上接近 100%，验证集较早收敛。
 
 </article>
 

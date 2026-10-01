@@ -18,7 +18,7 @@ hide:
 
 ## Summary
 
-这次组会把几类方法放在同一张表里比较：
+实验比较了不同初始点和终点下的四类控制方法：
 
 | 方法 | 训练时间 | 仿真结果 | 外界扰动估计 | 内部扰动干扰 |
 | --- | --- | --- | --- | --- |
@@ -27,7 +27,7 @@ hide:
 | Neural Observer | 较短 | 收敛 | 跟踪性能好 | 影响较小 |
 | Data-Driven | 较长 | 发散 | 跟踪性能较差 | / |
 
-组会路线包括 Problem Formulation、Stability Analysis & Generalization、Training Methodology 和 Experiments。实验线分成 LTI 的 X-29、非线性的 Quad-UAV，以及带时变扰动的 WaterLily。
+实验涵盖 LTI 的 X-29、非线性的 Quad-UAV，以及带时变扰动的 WaterLily。
 
 ## Problem Statement
 
@@ -37,7 +37,7 @@ hide:
 u(t)=F(t)=[F_x(t),F_y(t)]^\top.
 \]
 
-WaterLily 流体扰动记作 \(f_a\)。为讨论方便取 \(m=1\)。我的记录里把任务写成：在流体环境中设计状态观测器，估计物体状态和外界扰动力。
+WaterLily 流体扰动记作 \(f_a\)，取物体质量 \(m=1\)。观测器用于估计物体状态和外界扰动力。
 
 ## Environment
 
@@ -65,15 +65,6 @@ WaterLily 流体扰动记作 \(f_a\)。为讨论方便取 \(m=1\)。我的记录
 ```text
 流体更新 → 智能体多步仿真 → 状态保持 → 下一次流体更新
 ```
-
-## 实验记录
-
-组会中记录了变初始点和变终点实验。核心观察为：
-
-- Basic 控制能够收敛，但存在稳态误差。
-- Linear Observer 在数值计算中不稳定。
-- Neural Observer 能在该流体扰动环境中保持收敛。
-- 直接 data-driven 控制训练时间更长，仿真记录中出现发散。
 
 </article>
 

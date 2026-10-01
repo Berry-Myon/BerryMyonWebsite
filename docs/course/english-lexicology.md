@@ -30,7 +30,7 @@ hide:
 
 ## 语域分布
 
-COCA 的每百万词频记录：
+COCA 中的每百万词频：
 
 | 词 | blog | spoken | fiction | newspaper | academic |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -60,13 +60,13 @@ COCA 的每百万词频记录：
 
 ## 固定搭配与特殊情况
 
-我单独记录了固定搭配 `add insult to injury`。在 COCA 搭配统计中，`injury` 会显著抬高 `insult` 的共现频率。
+固定搭配 `add insult to injury` 中的 `injury` 会显著抬高它与 `insult` 在 COCA 搭配统计中的共现频率。
 
-我也记录了例外：`Islam` 更常与 `insult` 搭配，`Muslims` 更常与 `offend` 搭配。这类例外受地理、政治、文化等因素影响。
+`Islam` 更常与 `insult` 搭配，`Muslims` 更常与 `offend` 搭配。这类例外受地理、政治、文化等因素影响。
 
 ## 结论
 
-最后，我认为 COCA 可以帮助区分近义词在搭配对象和语境分布上的差异。对于 `insult` 和 `offend`，一条可用的线索是对象范围，另一条线索是文本类型。
+最后，我认为区分 `insult` 和 `offend` 的用法，需要结合搭配对象的范围和文本类型。
 
 </article>
 

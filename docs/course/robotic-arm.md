@@ -15,7 +15,7 @@ hide:
 
 实验内容为 ZJU-I 型桌面机械臂的正运动学、逆运动学和 CoppeliaSim 仿真验证。
 
-我在实验中使用 modified D-H 参数，末端位姿采用 \(XY'Z'\) 欧拉角表示。D-H 表保留为文字表：
+我在实验中使用 modified D-H 参数，末端位姿采用 \(XY'Z'\) 欧拉角表示。D-H 参数如下：
 
 | 关节 | \(\theta\) | \(d\) | \(a\) | \(\alpha\) |
 | --- | --- | ---: | ---: | --- |
@@ -29,10 +29,10 @@ hide:
 
 <figure class="course-figure" markdown="1">
 ![机械臂 D-H 参数表](../assets/course/robotic-arm/robotic-arm-27.png)
-<figcaption>PPT 中保存的七自由度机械臂 D-H 参数表。</figcaption>
+<figcaption>七自由度机械臂 D-H 参数表。</figcaption>
 </figure>
 
-正运动学检验中，仿真值与计算值在位置上保持接近。我摘录两组数据如下：
+正运动学检验中，两组末端位置的计算值与仿真值如下：
 
 | 编号 | 类型 | X | Y | Z |
 | --- | --- | ---: | ---: | ---: |
@@ -43,7 +43,7 @@ hide:
 
 ## 七自由度货物分拣仿真
 
-PPT 的主题为“智能超市自主货物分拣系统”。仿真中使用七自由度机械臂完成货物在货架间的转移。
+在“智能超市自主货物分拣系统”仿真中，我使用七自由度机械臂完成货物在货架间的转移。
 
 轨迹规划采用 MATLAB Robotics Toolbox。流程包括：
 
@@ -66,14 +66,14 @@ PPT 的主题为“智能超市自主货物分拣系统”。仿真中使用七�
 
 ## 控制器
 
-控制结构采用前馈力矩补偿加关节 PID。PPT 中的控制框图如下：
+控制结构采用前馈力矩补偿加关节 PID：
 
 <figure class="course-figure" markdown="1">
 ![机械臂控制结构](../assets/course/robotic-arm/robotic-arm-10.png)
 <figcaption>前馈与关节 PID 控制结构。</figcaption>
 </figure>
 
-仿真曲线分别记录期望关节角、角速度、角加速度和跟踪结果。PPT 中保存的曲线如下：
+仿真曲线包括期望关节角、角速度、角加速度和跟踪结果：
 
 <div class="course-gallery" markdown="1">
 <figure class="course-figure" markdown="1">
@@ -86,7 +86,7 @@ PPT 的主题为“智能超市自主货物分拣系统”。仿真中使用七�
 </figure>
 </div>
 
-PPT 结论记录为：机械臂完成层内转移、层间转移和避障动作。
+机械臂在仿真中完成了层内转移、层间转移和避障动作。
 
 </article>
 

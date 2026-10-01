@@ -18,9 +18,7 @@ hide:
 
 ## Background
 
-汇报以 Moravec's Paradox 开头：高级推理对 AI 较容易，感知和运动对 AI 较难。SIMA 的目标对应“抽象化、通用化、grounding”三件事。
-
-SIMA 的核心目标写作：
+Moravec's Paradox 指出，高级推理对 AI 较容易，感知和运动对 AI 较难。SIMA 的研究目标是：
 
 > 构建一个智能体，它能听懂任意自然语言指令，在任何虚拟 3D 环境中完成任何人类能做的事情。
 
@@ -36,7 +34,7 @@ SIMA 的核心目标写作：
 
 SIMA 团队使用 Commercial Video Games 和 Research Environments 的组合。商业游戏提供开放世界、视觉丰富度和复杂交互，研究环境提供可控与可靠评估。
 
-汇报中记录的两个例子：
+环境示例：
 
 | 环境 | 记录 |
 | --- | --- |
@@ -100,11 +98,7 @@ Initial results 中比较了四种设置：
 | No Pretraining | 去掉 SPARC 和 Phenaki 的预训练，改用从头训练的 ResNet。 |
 | No Language | 去掉语言指令输入。 |
 
-汇报中还记录了人工评估分歧：含糊任务里，有些失败来自智能体在完成任务前执行了额外行为，例如在 “recharge the mining beam” 指令下先打开 starship menu，或在 “mine oxygen” 指令下扫描后进入 analysis mode。
-
-## SIMA 2
-
-最后的参考资料转向 SIMA 2。我的记录写下两条线索：SIMA 1 的 generalist 3D agent，以及 SIMA 2 中“plays, reasons and learns with you”的进一步版本。
+人工评估中，含糊任务存在判断分歧。有些失败来自智能体在完成任务前执行了额外行为，例如在 “recharge the mining beam” 指令下先打开 starship menu，或在 “mine oxygen” 指令下扫描后进入 analysis mode。
 
 </article>
 

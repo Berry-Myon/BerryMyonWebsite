@@ -31,7 +31,7 @@ hide:
 
 ## 硬件装配
 
-我当时使用的硬件清单：
+我使用的硬件：
 
 | 系统 | 材料 |
 | --- | --- |
@@ -67,7 +67,7 @@ hide:
 
 ## 飞控设置
 
-QGroundControl 设置记录：
+QGroundControl 设置：
 
 ```text
 机架：Generic 250 Racer

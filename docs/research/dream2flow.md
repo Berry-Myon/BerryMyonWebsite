@@ -18,13 +18,13 @@ hide:
 
 ## Background
 
-传统 Vision-Language-Action 模型写作：
+传统 Vision-Language-Action 模型将视觉和语言映射为动作：
 
 ```text
 Vision + Language → Action
 ```
 
-在机器人任务中，动作与物体运动联系紧密。Dream2Flow 把任务改写成：
+Dream2Flow 引入物体运动作为中间表示：
 
 ```text
 Vision + Language + Object Motion → Robot Action
@@ -107,9 +107,9 @@ P_{1:T}\in\mathbb{R}^{T\times N\times 3}.
 
 ## Video Generation Model
 
-汇报中记录了 Wan 2.1 和 Veo 3 两类视频生成模型，以及几类任务：
+视频生成使用 Wan 2.1 和 Veo 3，任务包括：
 
-| 任务 | 记录 |
+| 任务 | 任务设置与成功条件 |
 | --- | --- |
 | Push-T | 在 OmniGibson 中推动 T 形积木到木板中心，位置误差小于 2 cm，方向误差小于 15°。 |
 | Put Bread in Bowl | 在真实场景中把面包放进碗里。 |
@@ -163,13 +163,9 @@ u=(p_x,p_y,\Delta p_x,\Delta p_y,l),
 
 ## Conclusion
 
-汇报最后记录了三点：
+Dream2Flow 以 3D Object Flow 表达物体运动，将物体运动与机器人动作解耦，可结合粒子动力学、轨迹优化和强化学习控制，适用于不同机器人形态。
 
-- 将物体运动和机器人动作解耦，不依赖具体机器人形态。
-- 3D Object Flow 能更灵活地描述物体运动。
-- 可与粒子动力学、轨迹优化、强化学习等多种控制方式结合。
-
-我认为限制也很直接：系统依赖上游 Video Generation Model 的质量，视频生成成本高，串联结构会让误差逐级传递。
+系统依赖上游 Video Generation Model 的质量，视频生成成本高，串联结构会让误差逐级传递。
 
 </article>
 

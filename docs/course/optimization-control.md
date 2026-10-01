@@ -39,7 +39,7 @@ I = -0.001057
 D = -14.09
 ```
 
-MATLAB PID tuner 提示：`PID tuner could not find an initial stabilizing controller`。之后我改用 LQR 和 MPC 为主要实现。
+MATLAB PID tuner 提示：`PID tuner could not find an initial stabilizing controller`。之后我改用 LQR 和 MPC。
 
 ## 非约束 LQR
 
@@ -56,7 +56,7 @@ R = 1;
 K = lqr(A,B,Q,R);
 ```
 
-我另外记录了一组 LQR 参数：
+另一组 LQR 参数与反馈增益：
 
 ```matlab
 Q = diag([100, 10, 1, 100, 10, 1])

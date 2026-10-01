@@ -18,7 +18,7 @@ hide:
 
 ## Background
 
-这次组会延续神经网络观测器的两阶段路线：
+神经网络观测器采用两阶段训练：
 
 ### Stage I：Point-Guided 预训练
 
@@ -45,7 +45,7 @@ L_{\mathrm{LMI}}(\theta)
 
 ## LMI Problems: Optimization
 
-组会中把问题从 NN Observer 扩展到 Controller 和其他 LMI 约束优化。闭环系统写为：
+我将两阶段训练拓展到控制器和其他 LMI 约束优化问题。闭环系统写为：
 
 \[
 \dot{x}=Ax+B(\pi(x)+e).
@@ -65,7 +65,7 @@ RL 策略需要位于梯度安全集合：
 H(P,\lambda,\gamma;\xi)\prec O.
 \]
 
-搜索 \(\gamma\) 的记录为：
+\(\gamma\) 的搜索流程：
 
 ```text
 γ = 0.25 → γ = γ × 1.8 → bisec(γ)
@@ -73,35 +73,33 @@ H(P,\lambda,\gamma;\xi)\prec O.
 
 ## RNN Controller
 
-汇报中把 RNN Controller 与 Two-Stage 放在同一表里比较：
+RNN Controller 与 Two-Stage 的可行条件如下：
 
 | 情况 | RNN Controller \(D_4=0\) | RNN Controller \(D_4\ne0\) | Two-Stage \(D_4=0\) | Two-Stage \(D_4\ne0\) |
 | --- | --- | --- | --- | --- |
 | \(N_{\mathrm{DOF}}=N_{\mathrm{control}}\) | √ | × | √ | √ |
 | \(N_{\mathrm{DOF}}>N_{\mathrm{control}}\) | √ | × | √ | × |
 
-记录中的两个例子是 Inverted Pendulum 和 Cart-Pole。Inverted Pendulum 满足 \(D_4=0\)，Cart-Pole 中：
+Inverted Pendulum 满足 \(D_4=0\)。Cart-Pole 中：
 
 \[
 D_4=\frac{1}{2}D_{\psi_1}D_{G_2}D_{K_1}\ne0.
 \]
 
-## Theory 记录
+## 稳定半径与覆盖率
 
-WaterLily 场景中，稳定半径和概率记录为：
+WaterLily 场景的稳定半径与概率：
 
-| 场景 | \(r_{\min}\) | \(P(r>0.01)\) | 概率记录 |
+| 场景 | \(r_{\min}\) | \(P(r>0.01)\) | 概率 |
 | --- | --- | --- | --- |
 | WaterLily | 0.0067 | 99.995% | 0.2865 |
 
-覆盖率记录为：
+覆盖率：
 
 | \(r_{\min}\) | 90% Cov |
 | --- | --- |
 | 0.01 | \(1.18\times10^6\) |
 | 0.05 | \(3.94\times10^4\) |
-
-我的记录里把这一页作为“从点值稳定训练到全局证书”的阶段性整理。NN Observer 已经完成基本闭环，Controller 与更一般 LMI 问题继续沿同一条 warm start 思路展开。
 
 </article>
 

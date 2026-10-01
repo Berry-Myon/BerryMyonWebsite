@@ -18,7 +18,7 @@ hide:
 
 ## Lyapunov 与 CLF
 
-这次汇报从自治非线性系统开始：
+考虑自治非线性系统：
 
 \[
 \dot{x}=f(x).
@@ -38,7 +38,7 @@ V(x_e)=0,\qquad V(x)>0\ (x\ne x_e),\qquad \dot{V}(x)<0\ (x\ne x_e).
 
 <figure class="course-figure" markdown="1">
 ![Lyapunov function definition](../assets/research/lyge-lyapunov-definition.png)
-<figcaption>汇报中引用的 Lyapunov function 定义与渐近稳定定理。</figcaption>
+<figcaption>Lyapunov 函数定义与渐近稳定定理。</figcaption>
 </figure>
 
 控制 Lyapunov 函数 \(V\) 满足：
@@ -61,7 +61,7 @@ V(x_e)=0,\qquad V(x)>0\ (x\ne x_e),\qquad \dot{V}(x)<0\ (x\ne x_e).
 
 ## LYGE 流程
 
-汇报讨论离散时间未知动力系统：
+考虑离散时间未知动力系统：
 
 \[
 x_{t+1}=h(x_t,u_t).
@@ -69,7 +69,7 @@ x_{t+1}=h(x_t,u_t).
 
 目标是在初始状态 \(x(0)\in X_0\) 下找到控制策略 \(u=\pi(x)\)，使闭环系统渐近稳定到 \(x_{\mathrm{goal}}\)。
 
-算法中同时学习三件事：
+算法联合学习：
 
 - 控制器 \(\pi_\phi\)
 - 局部动力学近似 \(h_\psi\)
@@ -88,11 +88,11 @@ trusted tunnel 定义为距离数据集不超过 \(\gamma\) 的状态集合：
 \{x\mid \exists x_i\in D_x^\tau,\ \|x-x_i\|\le \gamma\}.
 \]
 
-随着轨迹采集，\(\mathcal{H}_\tau\) 扩张到更低 CLF 值的区域。收敛后，LYGE 返回的控制器 \(\pi^\*\) 可在 \(\mathcal{H}^\*\) 中被信任。
+随着轨迹采集，\(\mathcal{H}_\tau\) 扩张到更低 CLF 值的区域。收敛后，LYGE 得到 \(\mathcal{H}^\*\) 内的稳定控制器 \(\pi^\*\)。
 
 ## CLF 学习
 
-汇报中使用的可学习 CLF 写成：
+可学习 CLF 写成：
 
 \[
 V_\theta^\tau(x)
@@ -108,10 +108,10 @@ L^\tau=L_{\mathrm{CLF}}^\tau+\eta_{\mathrm{ctrl}}L_{\mathrm{ctrl}}^\tau.
 
 <figure class="course-figure" markdown="1">
 ![LYGE CLF loss](../assets/research/lyge-clf-loss.png)
-<figcaption>汇报中记录的 CLF 损失和控制器损失形式。</figcaption>
+<figcaption>CLF 损失与控制器损失。</figcaption>
 </figure>
 
-## 收敛记录
+## 收敛条件
 
 动力学近似在训练数据上的最大误差记为 \(\omega\)：
 
@@ -119,7 +119,7 @@ L^\tau=L_{\mathrm{CLF}}^\tau+\eta_{\mathrm{ctrl}}L_{\mathrm{ctrl}}^\tau.
 \|h_\psi^\tau(x_t,\pi_\phi^\tau(x_t))-x_i(t+1)\|\le \omega.
 \]
 
-若 \(L_{\mathrm{CLF}}^\tau\) 在每轮迭代中 \(\epsilon'\)-robustly converges，且 margin \(\epsilon\) 足够大，则 LYGE 收敛并返回稳定控制器。汇报中记录的条件为：
+若 \(L_{\mathrm{CLF}}^\tau\) 在每轮迭代中 \(\epsilon'\)-robustly converges，且 margin \(\epsilon\) 足够大，则 LYGE 收敛并返回稳定控制器。条件为：
 
 \[
 \epsilon\ge
@@ -140,7 +140,7 @@ V_\theta^\tau(h(x,\pi_\theta^\tau(x)))
 \forall x\in\mathcal{H}_\tau.
 \]
 
-我的记录里还把数据多轮扩张画成：
+数据更新流程：
 
 ```text
 初始示范 → 模仿学习 → 更新局部动力学 → 学习 CLF 与控制器 → 探索 → 扩充数据

@@ -94,7 +94,7 @@ L_{\mathrm{LMI}}(\theta)=
 
 我将 \(\theta_{\mathrm{pre}}\) 作为初始化，微调网络直至 \(H(\theta)\prec O\)。在对应的 LMI 稳定性条件下，充分减小增益参数 \(\epsilon\) 时，观测误差趋近于零。
 
-## 理论记录
+## 理论分析
 
 局部稳定半径来自采样点附近的连续性。若 \(F_V(\eta_s,\theta)\le-\xi<0\)，在 Lipschitz 条件下存在邻域 \(B(\eta_s,r_s)\cap\mathcal{X}\)，使其中的点仍满足 \(F_V(\eta,\theta)\le0\)。当 \(C_2>0\) 时，半径可取二次方程正根：
 
@@ -180,10 +180,6 @@ X'=X+\sigma\frac{Y}{\|Y\|}\|X\|,\qquad X\in\{A,C\}.
 | Point-Guided | 99.53 | 1.0645 |
 | LMI Gradient Descent | 2210.39 | 0.0707 |
 | Point & LMI Tuning | 895.31 | 0.0499 |
-
-## 结论
-
-我通过点值 Lyapunov 预训练与 LMI 微调训练高容量神经网络观测器，并获得全局 LMI 稳定性证书。预训练阶段的分析给出了局部稳定半径和紧致误差状态域上的概率覆盖界。Quad-UAV 与 AUV 实验中，观测器减少了跟踪误差，X-29 消融实验验证了两阶段训练的效率。
 
 </article>
 
