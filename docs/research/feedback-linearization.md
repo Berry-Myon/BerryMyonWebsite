@@ -147,7 +147,7 @@ v=(0.2936,\ 0.1914,\ 0.1722,\ 0.2392,\ 0.2548,\ 0.2246,\ldots).
 <aside class="course-index" aria-label="白玉楼索引">
   <p class="course-index__title">文章列表</p>
   <a class="course-index__home" href="index.html">总览</a>
-  <div class="course-index__group"><p>论文</p><a href="neurips2026.html">NeurIPS2026（在投）</a></div>
+  <div class="course-index__group"><p>论文</p><a href="neurips2026.html">NeurIPS2026（Poster）</a></div>
   <div class="course-index__group"><p>组会</p><a href="lyge.html">LYGE</a><a href="neural-observer-i.html">Neural Observer I</a><a class="is-active" href="feedback-linearization.html">反馈线性化</a><a href="sima.html">SIMA</a><a href="neural-observer-ii.html">Neural Observer II</a><a href="neural-observer-iii.html">Neural Observer III</a><a href="dream2flow.html">Dream2Flow</a><a href="neural-observer-iv.html">Neural Observer IV</a></div>
 </aside>
 </div>
