@@ -23,41 +23,51 @@ hide:
   </header>
 
   <div class="map-shell">
-    <div class="gensokyo-map" aria-label="半妖阁幻想乡导览地图">
-      <div class="map-scene map-scene--day" aria-hidden="true"></div>
-      <div class="map-scene map-scene--night" aria-hidden="true"></div>
+    <div class="gensokyo-map" aria-label="半妖阁地图">
+      <svg class="map-connections" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <line x1="40%" y1="20%" x2="46%" y2="40%"></line>
+        <line x1="46%" y1="40%" x2="34%" y2="67%"></line>
+        <line x1="34%" y1="67%" x2="14%" y2="53%"></line>
+        <line x1="46%" y1="40%" x2="73%" y2="77%"></line>
+        <line x1="34%" y1="67%" x2="73%" y2="77%"></line>
+      </svg>
 
-      <nav class="map-portals" aria-label="地图栏目入口">
-        <a class="map-marker map-marker--cosplay" href="cosplay/index.html">
-          <span class="map-marker__eyebrow">漫展纪行</span>
-          <span class="map-marker__name">西行樱庭</span>
-        </a>
+      <nav class="map-portals" aria-label="栏目入口">
+        <div class="map-location map-location--cosplay" style="--map-x: 40%; --map-y: 20%">
+          <span class="map-point" aria-hidden="true"></span>
+          <a class="map-marker map-marker--cosplay" href="cosplay/index.html">
+            <span class="map-marker__name">西行樱庭</span>
+          </a>
+        </div>
 
-        <a class="map-marker map-marker--research" href="research/index.html">
-          <span class="map-marker__eyebrow">科研手札</span>
-          <span class="map-marker__name">白玉楼</span>
-        </a>
+        <div class="map-location map-location--research" style="--map-x: 46%; --map-y: 40%">
+          <span class="map-point" aria-hidden="true"></span>
+          <a class="map-marker map-marker--research" href="research/index.html">
+            <span class="map-marker__name">白玉楼</span>
+          </a>
+        </div>
 
-        <a class="map-marker map-marker--work" href="work/index.html">
-          <span class="map-marker__eyebrow">工作拾遗</span>
-          <span class="map-marker__name">香霖堂</span>
-        </a>
+        <div class="map-location map-location--work" style="--map-x: 14%; --map-y: 53%">
+          <span class="map-point" aria-hidden="true"></span>
+          <a class="map-marker map-marker--work" href="work/index.html">
+            <span class="map-marker__name">香霖堂</span>
+          </a>
+        </div>
 
-        <a class="map-marker map-marker--course" href="course/index.html">
-          <span class="map-marker__eyebrow">课程札记</span>
-          <span class="map-marker__name">寺子屋</span>
-        </a>
+        <div class="map-location map-location--course" style="--map-x: 34%; --map-y: 67%">
+          <span class="map-point" aria-hidden="true"></span>
+          <a class="map-marker map-marker--course" href="course/index.html">
+            <span class="map-marker__name">寺子屋</span>
+          </a>
+        </div>
 
-        <a class="map-marker map-marker--friends" href="friends/index.html">
-          <span class="map-marker__eyebrow">友人小径</span>
-          <span class="map-marker__name">竹林隐居</span>
-        </a>
+        <div class="map-location map-location--friends" style="--map-x: 73%; --map-y: 77%">
+          <span class="map-point" aria-hidden="true"></span>
+          <a class="map-marker map-marker--friends" href="friends/index.html">
+            <span class="map-marker__name">竹林隐居</span>
+          </a>
+        </div>
       </nav>
     </div>
-
-    <p class="map-hint">
-      <span aria-hidden="true">✦</span>
-      点击地图上的地标进入栏目 · 右上角可切换日夜
-    </p>
   </div>
 </section>
