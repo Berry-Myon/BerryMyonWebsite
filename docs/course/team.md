@@ -15,10 +15,6 @@ hide:
 
 团队竞赛没有友人的帮助可不行，让我们进入满月的竹林查看吧
 
-<a class="terakoya-jump" href="../friends/index.html">
-  不死的<span class="jump-flame">火焰</span>——照亮我<span class="jump-bamboo">竹林</span>之路
-</a>
-
 </article>
 
 <aside class="course-index" aria-label="寺子屋索引">
