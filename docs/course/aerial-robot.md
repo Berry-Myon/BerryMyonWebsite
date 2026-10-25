@@ -13,7 +13,7 @@ hide:
 
 ## 实验题目
 
-在这门课里，我完成的题目是“无人机动捕系统下自主悬停”。
+这门课中，我完成了无人机动捕系统下自主悬停实验。
 
 实验目的：
 
@@ -121,7 +121,7 @@ roslaunch so3_quadrotor_simulator simulator_example.launch
 </figure>
 </div>
 
-仿真曲线趋于稳定并收敛。
+仿真曲线收敛。
 
 ## 动捕实操
 

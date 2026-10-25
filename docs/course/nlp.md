@@ -13,7 +13,7 @@ hide:
 
 ## VQA 任务
 
-实验选题为 Visual Question Answering。输入是一张图片和一个关于图片内容的自然语言问题，输出为正确答案。
+我在这门课中完成了 Visual Question Answering（VQA）实验。输入是一张图片和一个关于图片内容的自然语言问题，输出为正确答案。
 
 数据集由训练集、验证集和测试集组成，每部分包含图片、问题 JSON 和答案 JSON。
 
