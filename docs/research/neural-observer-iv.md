@@ -45,7 +45,7 @@ L_{\mathrm{LMI}}(\theta)
 
 ## LMI Problems: Optimization
 
-我将两阶段训练拓展到控制器和其他 LMI 约束优化问题。闭环系统写为：
+将两阶段训练拓展到控制器和其他 LMI 约束优化问题。闭环系统写为：
 
 \[
 \dot{x}=Ax+B(\pi(x)+e).

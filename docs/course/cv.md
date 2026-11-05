@@ -13,7 +13,7 @@ hide:
 
 ## 视差估计
 
-我在视差估计实践中使用 TUKUBA 双目图像对，对比 BM、SGM 和 MiDaS 三种方法。
+视差估计实践使用 TUKUBA 双目图像对，对比 BM、SGM 和 MiDaS 三种方法。
 
 BM 使用 OpenCV `StereoBM`：
 
@@ -71,7 +71,7 @@ MiDaS 采用 Intel 实验室推出的轻量级深度学习模型，基于 ResNet
 | SGM | 9172.95 | 0 | 4008.90 |
 | MiDaS | 9699.51 | 4008.90 | 0 |
 
-从图像效果看，我认为深度学习方法的视差图最好，图像边缘最平滑。SGM 次之，BM 最弱。
+从图像效果看，深度学习方法的视差图最好，图像边缘最平滑。SGM 次之，BM 最弱。
 
 ## 图像降质
 
@@ -142,7 +142,7 @@ cv2.imwrite("sr_image2.jpg", sr.upsample(denoised_image2))
 </figure>
 </div>
 
-最后，我认为双边滤波保留的图像细节更多，FSRCNN 的超分辨率结果更清晰。
+从结果看，双边滤波保留的图像细节更多，FSRCNN 的超分辨率结果更清晰。
 
 </article>
 

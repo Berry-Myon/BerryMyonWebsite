@@ -22,9 +22,9 @@ hide:
 
 ## 研究主题
 
-我研究带外部扰动和未建模动态的控制系统。控制器需要状态和扰动估计，神经网络观测器能拟合复杂不确定项。通过 LMI 约束证明 Lyapunov 稳定性时，网络规模增大会使对应的 SDP 求解耗时增加，并带来数值困难。
+研究对象为带外部扰动和未建模动态的控制系统。控制器需要状态和扰动估计，神经网络观测器能拟合复杂不确定项。通过 LMI 约束证明 Lyapunov 稳定性时，网络规模增大会使对应的 SDP 求解耗时增加，并带来数值困难。
 
-我采用两阶段训练：
+采用两阶段训练：
 
 1. Point-Guided Lyapunov Pre-Training：在误差状态空间采样，先用点值 Lyapunov 损失训练高容量观测器。
 2. LMI-Based Fine-Tuning：从预训练参数出发，微调到满足 \(H(\theta)\prec O\)，得到全局 Lyapunov 证书。
@@ -58,7 +58,7 @@ y(t) &= Cx(t).
 \dot{\eta}(t)=A_\epsilon\eta(t)-\nu(\eta,\theta)+\epsilon w(t).
 \]
 
-对二次 Lyapunov 函数 \(V(\eta)=\eta^\top P\eta\)，我使用的点值上界为：
+对二次 Lyapunov 函数 \(V(\eta)=\eta^\top P\eta\)，使用的点值上界为：
 
 \[
 F_V(\eta,\theta)
@@ -92,7 +92,7 @@ L_{\mathrm{LMI}}(\theta)=
 \phi\!\left(\lambda_{\max}(H(\theta))\right)+\beta\|\theta\|^2.
 \]
 
-我将 \(\theta_{\mathrm{pre}}\) 作为初始化，微调网络直至 \(H(\theta)\prec O\)。在对应的 LMI 稳定性条件下，充分减小增益参数 \(\epsilon\) 时，观测误差趋近于零。
+将 \(\theta_{\mathrm{pre}}\) 作为初始化，微调网络直至 \(H(\theta)\prec O\)。在对应的 LMI 稳定性条件下，充分减小增益参数 \(\epsilon\) 时，观测误差趋近于零。
 
 ## 理论分析
 
@@ -120,7 +120,7 @@ U_T=\bigcup_{i=1}^{T}\left(B(\eta_i,r_i)\cap\mathcal{X}\right).
 
 ### Quad-UAV：地面效应下的起飞与降落
 
-我用 Basic PID、PID + Neural Lander 和 PID + Neural Network Observer 比较垂直轨迹跟踪。Neural Lander 使用 40,000 个数据点学习任务相关的前馈补偿，神经网络观测器在线估计扰动力 \(f_a\)，并将推力修正为 \(T_{\mathrm{cmd}}'=T_{\mathrm{cmd}}-\hat f_a\)。
+用 Basic PID、PID + Neural Lander 和 PID + Neural Network Observer 比较垂直轨迹跟踪。Neural Lander 使用 40,000 个数据点学习任务相关的前馈补偿，神经网络观测器在线估计扰动力 \(f_a\)，并将推力修正为 \(T_{\mathrm{cmd}}'=T_{\mathrm{cmd}}-\hat f_a\)。
 
 ![Quad-UAV 的降落与起飞轨迹](../assets/research/neurips2026-quad-uav.png)
 
@@ -134,7 +134,7 @@ U_T=\bigcup_{i=1}^{T}\left(B(\eta_i,r_i)\cap\mathcal{X}\right).
 
 ### WaterLily：流体扰动下的 AUV 轨迹跟踪
 
-我在 WaterLily 中模拟 von Kármán 涡街，网格大小为 \(384\times192\)，上游流速为 \(U=10.0\)，雷诺数为 \(Re=200\)。AUV 从 \((128,96)\) 出发，穿过圆柱尾流，驶向目标 \((200,130)\)。NMPC 的预测时域为 \(H=20\)，ESO 带宽为 \(\omega_0=15\)。
+在 WaterLily 中模拟 von Kármán 涡街，网格大小为 \(384\times192\)，上游流速为 \(U=10.0\)，雷诺数为 \(Re=200\)。AUV 从 \((128,96)\) 出发，穿过圆柱尾流，驶向目标 \((200,130)\)。NMPC 的预测时域为 \(H=20\)，ESO 带宽为 \(\omega_0=15\)。
 
 ![WaterLily 流体环境与 AUV 轨迹对比](../assets/research/neurips2026-waterlily.png)
 
@@ -148,9 +148,9 @@ U_T=\bigcup_{i=1}^{T}\left(B(\eta_i,r_i)\cap\mathcal{X}\right).
 
 ### X-29：网络容量与结构扰动
 
-我比较 Linear、Tiny NN、Small NN 和 Large NN 四种观测器。Tiny NN 的隐藏层为 \([3,3,3]\)，Small NN 为 \([32,64,32]\)，Large NN 使用八层 ResNet，隐藏层为 \([32,64,64,128,128,64,64,32]\)。对应的隐藏神经元总数为 9、128 和 576。
+比较 Linear、Tiny NN、Small NN 和 Large NN 四种观测器。Tiny NN 的隐藏层为 \([3,3,3]\)，Small NN 为 \([32,64,32]\)，Large NN 使用八层 ResNet，隐藏层为 \([32,64,64,128,128,64,64,32]\)。对应的隐藏神经元总数为 9、128 和 576。
 
-我对系统矩阵 \(A\) 和输出矩阵 \(C\) 加入结构扰动：
+对系统矩阵 \(A\) 和输出矩阵 \(C\) 加入结构扰动：
 
 \[
 X'=X+\sigma\frac{Y}{\|Y\|}\|X\|,\qquad X\in\{A,C\}.
@@ -171,7 +171,7 @@ X'=X+\sigma\frac{Y}{\|Y\|}\|X\|,\qquad X\in\{A,C\}.
 
 ### X-29：训练效率与两阶段消融
 
-我用 Large NN 比较点值预训练、纯 LMI 优化与两阶段训练。纯 LMI 梯度下降耗时 2210.39 s，两阶段训练耗时 895.31 s，约加速 2.5 倍。
+用 Large NN 比较点值预训练、纯 LMI 优化与两阶段训练。纯 LMI 梯度下降耗时 2210.39 s，两阶段训练耗时 895.31 s，约加速 2.5 倍。
 
 ![X-29 两阶段训练与纯 LMI 优化的误差变化](../assets/research/neurips2026-training-ablation.png)
 

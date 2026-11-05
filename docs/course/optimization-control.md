@@ -13,7 +13,7 @@ hide:
 
 ## 控制对象
 
-我使用的线性系统如下：
+线性系统如下：
 
 ```matlab
 A = [0 0 0 1 0 0;
@@ -31,7 +31,7 @@ D = [0; 0; 0];
 
 ## PID
 
-我在 Simulink 中得到的 PID 调参结果为：
+Simulink 中的 PID 调参结果为：
 
 ```ini
 P = -0.2588
@@ -39,7 +39,7 @@ I = -0.001057
 D = -14.09
 ```
 
-MATLAB PID tuner 提示：`PID tuner could not find an initial stabilizing controller`。之后我改用 LQR 和 MPC。
+MATLAB PID tuner 提示：`PID tuner could not find an initial stabilizing controller`。之后改用 LQR 和 MPC。
 
 ## 非约束 LQR
 
@@ -89,7 +89,7 @@ while 1
 end
 ```
 
-我测试过的约束值包括 \(75m/s^2\)、\(10m/s^2\)、\(0.15m/s^2\)，对应搜索得到的 \(R\) 有 24、0.0117、0.0000229。
+测试的约束值包括 \(75m/s^2\)、\(10m/s^2\)、\(0.15m/s^2\)，对应搜索得到的 \(R\) 有 24、0.0117、0.0000229。
 
 ## MPC
 
@@ -110,7 +110,7 @@ PHI = ss(A,B,C,D);
 % mpcDesigner
 ```
 
-我在 `mpcDesigner` 中设置采样时间 \(T_s=0.08s\)，并设置加速度约束 \(-20m/s^2 \leq u \leq 20m/s^2\)。
+在 `mpcDesigner` 中设置采样时间 \(T_s=0.08s\)，并设置加速度约束 \(-20m/s^2 \leq u \leq 20m/s^2\)。
 
 </article>
 

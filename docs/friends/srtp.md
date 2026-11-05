@@ -20,17 +20,17 @@ hide:
 | 顺位 | 3/3 |
 | 主题 | 模拟三维眼动的视觉系统设计 |
 
-我们模仿眼球运动机理，设计三自由度并联机器人的硬件结构，建立运动学模型并实现视觉跟踪算法。项目英文题目为 *Reproduction of 3D Eye Movement System Based on Parallel Kinematics and Visual Tracking Algorithm*。
+模仿眼球运动机理，设计三自由度并联机器人的硬件结构，建立运动学模型并实现视觉跟踪算法。项目英文题目为 *Reproduction of 3D Eye Movement System Based on Parallel Kinematics and Visual Tracking Algorithm*。
 
 ## 系统目标
 
-我们建立了 Stewart 机器人的逆运动学模型，在 OpenMV 平台上设计基于模板匹配的物体识别与定位算法，构建视觉伺服系统。系统可以对指定物体进行实时跟踪和位置定位，并根据物体位置控制摄像头位姿，使目标尽量保持在摄像头视野中心。
+建立了 Stewart 机器人的逆运动学模型，在 OpenMV 平台上设计基于模板匹配的物体识别与定位算法，构建视觉伺服系统。系统可以对指定物体进行实时跟踪和位置定位，并根据物体位置控制摄像头位姿，使目标尽量保持在摄像头视野中心。
 
 ## 硬件与运动学
 
 硬件部分先用 Inventor 对并联结构仿真，再通过 3D 打印验证结构。后期实物使用亚克力板、6 个带万向球头的连接杆和 6 个 \(180^\circ\) 舵机搭建 Stewart 平台。
 
-我们针对 6-SPS 并联机构做逆运动学解算，并在 MATLAB 中可视化。姿态旋转关系如下：
+针对 6-SPS 并联机构做逆运动学解算，并在 MATLAB 中可视化。姿态旋转关系如下：
 
 \[
 v_i=Rv_i'=R_z(\phi)R_y(\theta)R_x(\psi)v_i'
@@ -64,7 +64,7 @@ N=2a[\cos\beta(x_p-x_b)+\sin\beta(y_p-y_b)]
 
 ## 视觉识别
 
-前期在笔记本电脑上运行模型，使用 COCO 数据集上训练的 YOLOv5 做检测，使用 StrongSORT 做跟踪。后期搭建嵌入式视觉系统时，我们改用 OpenMV4 H7，完成对特征明显的彩色物体、光源、人脸等目标的识别。
+前期在笔记本电脑上运行模型，使用 COCO 数据集上训练的 YOLOv5 做检测，使用 StrongSORT 做跟踪。后期搭建嵌入式视觉系统时，改用 OpenMV4 H7，完成对特征明显的彩色物体、光源、人脸等目标的识别。
 
 联调时，OpenMV4 H7 固定在并联机构动平台上，作为上位机检测目标位置。STM32F407 接收上位机信号，输出 PWM 控制舵机，使并联机构带着摄像头转向目标。
 

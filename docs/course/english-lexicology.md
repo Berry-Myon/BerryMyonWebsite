@@ -13,20 +13,20 @@ hide:
 
 ## 语料库研究
 
-在这门课程中，我研究的主题是 *A Brief Research on the Synonyms: Insult and Offend, Take Usage in Fictions for Example*。
+课程研究主题为 *A Brief Research on the Synonyms: Insult and Offend, Take Usage in Fictions for Example*。
 
-我使用 COCA 语料库，对 `insult` 和 `offend` 的搭配对象、语域分布和小说类型分布进行比较。
+使用 COCA 语料库，对 `insult` 和 `offend` 的搭配对象、语域分布和小说类型分布进行比较。
 
 ## 名词搭配
 
-我先分别检索两个词的匹配串，再人工分析各 200 个句子。搭配对象统计如下：
+先分别检索两个词的匹配串，再人工分析各 200 个句子。搭配对象统计如下：
 
 | 词 | 单个人 | 群体 | 作名词使用 | 其他 | 合计 |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | insult | 35 | 18 | 122 | 25 | 200 |
 | offend | 44 | 91 | 0 | 65 | 200 |
 
-我的结论是：`insult` 更常搭配单个人，`offend` 更常搭配群体。
+统计结果中，`insult` 更常搭配单个人，`offend` 更常搭配群体。
 
 ## 语域分布
 
@@ -37,14 +37,14 @@ COCA 中的每百万词频：
 | insult | 17.21 | 6.99 | 11.94 | 5.91 | 4.07 |
 | offend | 6.88 | 4.09 | 3.93 | 2.90 | 2.13 |
 
-我据此转向小说语境中的细分分布：
+小说语境中的细分分布如下：
 
 | 词 | SciFi/Fant | Movies | Fan Fiction |
 | --- | ---: | ---: | ---: |
 | insult | 13.69 | 6.87 | 15.60 |
 | offend | 4.28 | 2.07 | 3.25 |
 
-我的假设是：科幻或幻想小说常写人类与异族、文明、宗教之间的冲突，`offend` 用于更大的群体或文化对象。Fan fiction 常围绕原作主角展开，`insult` 更容易落在具体人物或人物相关的抽象对象上。
+假设是：科幻或幻想小说常写人类与异族、文明、宗教之间的冲突，`offend` 用于更大的群体或文化对象。Fan fiction 常围绕原作主角展开，`insult` 更容易落在具体人物或人物相关的抽象对象上。
 
 ## 具体用法
 
@@ -66,7 +66,7 @@ COCA 中的每百万词频：
 
 ## 结论
 
-最后，我认为区分 `insult` 和 `offend` 的用法，需要结合搭配对象的范围和文本类型。
+区分 `insult` 和 `offend` 的用法，需要结合搭配对象的范围和文本类型。
 
 </article>
 

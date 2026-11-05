@@ -13,7 +13,7 @@ hide:
 
 ## VQA 任务
 
-我在这门课中完成了 Visual Question Answering（VQA）实验。输入是一张图片和一个关于图片内容的自然语言问题，输出为正确答案。
+这门课中完成了 Visual Question Answering（VQA）实验。输入是一张图片和一个关于图片内容的自然语言问题，输出为正确答案。
 
 数据集由训练集、验证集和测试集组成，每部分包含图片、问题 JSON 和答案 JSON。
 
@@ -27,7 +27,7 @@ hide:
 
 ## 双通道视觉语言模型
 
-我先实现基础 VQA 算法。图像部分使用 VGGNet 提取特征，问题部分使用 LSTM 得到文本特征。两个模态做元素积后进入 softmax 层输出答案概率。
+先实现基础 VQA 算法。图像部分使用 VGGNet 提取特征，问题部分使用 LSTM 得到文本特征。两个模态做元素积后进入 softmax 层输出答案概率。
 
 训练参数：
 
@@ -100,7 +100,7 @@ Bottom-Up Top-Down 部分先做图片预处理、JSON 预处理和词汇表构�
 
 ## MindSpore 尝试
 
-我还尝试把 PyTorch 代码迁移到 MindSpore。
+还尝试将 PyTorch 代码迁移到 MindSpore。
 
 迁移过程中遇到的问题：
 
@@ -112,7 +112,7 @@ Bottom-Up Top-Down 部分先做图片预处理、JSON 预处理和词汇表构�
 
 ## 使用提取后的图像特征训练
 
-我随后使用 Faster R-CNN 提取兴趣区域，再用 ResNet-101 提取 2048 维特征。对每个区域使用基于 IoU 阈值的非极大值抑制。
+随后使用 Faster R-CNN 提取兴趣区域，再用 ResNet-101 提取 2048 维特征。对每个区域使用基于 IoU 阈值的非极大值抑制。
 
 训练设置：
 

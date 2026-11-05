@@ -13,7 +13,7 @@ hide:
 
 ## 实验题目
 
-这门课中，我完成了无人机动捕系统下自主悬停实验。
+这门课中完成了无人机动捕系统下自主悬停实验。
 
 实验目的：
 
@@ -31,7 +31,7 @@ hide:
 
 ## 硬件装配
 
-我使用的硬件：
+实验硬件：
 
 | 系统 | 材料 |
 | --- | --- |
@@ -91,7 +91,7 @@ dshot save -m 1
 
 仿真实验补充 `linear_control.cpp` 中的 `calculateControl` 函数。输入包括期望状态 `des`、当前里程计 `odom`、惯性数据 `imu` 和增益 `gain`，输出控制指令 `u`。
 
-我采用串级 PID，外环控制位置，内环控制姿态。控制框图如下：
+采用串级 PID，外环控制位置，内环控制姿态。控制框图如下：
 
 <div class="course-gallery" markdown="1">
 <figure class="course-figure" markdown="1">
